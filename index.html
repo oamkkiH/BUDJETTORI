@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUDJETTORI</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Linkki tyylitiedostoon -->
+</head>
+<body>
+    <header>
+        <h1>BUDJETTORI</h1> <!-- Sovelluksen otsikko -->
+    </header>
+    <main>
+        <!-- Tapahtumien lisäyslomake -->
+        <section>
+            <form id="transactionForm">
+                <div class="form-row">
+                    <label for="type">Tyyppi:</label>
+                    <select id="type">
+                        <option value="income">Tulo</option>
+                        <option value="expense">Meno</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="amount">Määrä:</label>
+                    <input type="number" id="amount" required>
+                </div>
+                <div class="form-row">
+                    <label for="description">Kuvaus:</label>
+                    <input type="text" id="description" required>
+                </div>
+                <button type="submit">Lisää tapahtuma</button> <!-- Tapahtuman lisäyspainike -->
+                <button type="button" id="resetFormButton">Tyhjennä</button> <!-- Nollauspainike -->
+            </form>
+        </section>
+        <section id="transactionList">
+            <h2>Tapahtumat</h2> <!-- Tapahtumien listausalue -->
+            <div id="transactionsContainer"></div>
+        </section>
+        <section id="summary">
+            <h2>Yhteenveto</h2> <!-- Taloudellinen yhteenveto -->
+            <div>Kokonaistulot: <span id="totalIncome">0</span></div>
+            <div>Kokonaismenot: <span id="totalExpense">0</span></div>
+            <div>Jäljellä oleva budjetti: <span id="remainingBudget">0</span></div>
+        </section>
+        <!-- Säästötavoitteiden asetusalue -->
+        <section id="savingsGoal">
+            <h2>Säästötavoitteet</h2>
+            <input type="number" id="goalAmount" required>
+            <button type="button" id="addGoal">Lisää tavoite</button> <!-- Tavoitteen lisäyspainike -->
+            <ul id="goalList"></ul> <!-- Säästötavoitteiden listausalue -->
+        </section>
+    </main>
+    <script src="js/functions.js"></script> <!-- Linkki JavaScript-tiedostoon -->
+</body>
+</html>
